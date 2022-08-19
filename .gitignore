@@ -1,0 +1,14 @@
+# This file is intended to more easily create ignore rules for the whole team.
+# To use, simply copy and rename to .gitignore.  Think of another rule that should
+# be added?  Add it below and notify the team.
+
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
+config.py
+config.js
+.DS_Store
+*/.DS_Store/*
+__pycache__
+*/__pycache__/*
+Instructions
+*/Instructions/*
