@@ -1,0 +1,1 @@
+The purpose of this analysis was to determine whether applicants applying for a loan through Lending Tree would be approved or denied based on various criteria. A Machine Learning Model was utilized to determine initial accuracy.
