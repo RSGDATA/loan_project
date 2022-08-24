@@ -16,7 +16,7 @@
         <!-- SimpleLightbox plugin CSS-->
         <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.css" rel="stylesheet" />
+        <link rel="stylesheet" href="../static/css/style.css" />
     </head>
     
     
@@ -35,108 +35,133 @@
                                 Predict!
                             </a>
                             <ul class="dropdown-menu">
-                              <li><a class="dropdown-item" href="#payment_time">Payments on Time?</a></li>
-                              <li><a class="dropdown-item" href="#application">Application approved or rejected?</a></li>
-                              <li><a class="dropdown-item" href="#">Third model or nah?</a></li>
+                                <li><a class="dropdown-item" href="#payment_time">Payments on Time?</a></li>
+                                <li><a class="dropdown-item" href="#application">Application approved or rejected?</a></li>
+                                <li><a class="dropdown-item" href="#">Third model or nah?</a></li>
                             </ul>
-                          </li>
+                            </li>
                         <li class="nav-item"><a class="nav-link" href="#meet_the_team">The Team</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
         <!-- Masthead-->
-        <header class="masthead" style="background-image: url('assets/img/handing_money.jpg')">
+        <header class="masthead" style="background-image: url('../assets/img/handing_money.jpg')">
             <h1 class="title_home">Peer-to-Peer Loan Exploration</h1>
             <p></p>
         </header>
+        <!-- About Section -->
+        <section class="page-section" id="about" style="background-color: rgb(189, 239, 239) ;">
+            <h3>About Section</h3>
+            <div class="container">
+
+
+
+
+
+            </div>
+            <hr>
+        </section>
+
         <!-- END-USER MODEL 1-->
-        <section class="page-section bg-primary" id="payment_time">
-            <h3 style="text-align: center;">Wil you make your loan payment on time?</h3>
+        <section class="page-section" id="payment_time" style="background-color: rgb(189, 239, 239) ;">
+            <h3 class="model_headers">Will you make all of your loan payments on time?</h3>
+            <hr class="divider divider-light"/>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-6 text-center">
+
+                        <img id="timepic" src="../assets/img/timeticking.jpg">
+                    </div>
+                    <div class="col-lg-6 text-center">
+                        <h2 class="command_user">Fill out the form below and click the button to find out!</h2>
+                        <form method="POST" action="/model" role="form", name="paymenttime">
+                            <div class="form-group">
+                                <label class="input_labels" for="inputName">Recoveries:</label>
+                                <input type="text" class="form-control" id="inputIncome" name="income" placeholder="Recoveries">
+                            </div>
+                              <!-- between lines 78 & 81 is a template for the end user adding chosen text as a value -->
+                            <div class="form-group">
+                                <label class="input_labels" for="inputName">Total_rec_late_fee:</label>
+                                <input type="text" class="form-control" id="inputIncome" name="income" placeholder="Total_rec_late_fee">
+                            </div>
+
+                            <div class="form-group">
+                                <label class="input_labels" for="inputName">total_rec_prncp:</label>
+                                <input type="text" class="form-control" id="inputIncome" name="income" placeholder="total_rec_prncp">
+                            </div>
+
+                            <div class="form-group">
+                                <label class="input_labels" for="inputName">delinq_2yrs:</label>
+                                <input type="text" class="form-control" id="inputIncome" name="income" placeholder="delinq_2yrs">
+                            </div>
+                            <div class="form-group">
+                                <label class="input_labels" for="inputName">fico_range_high:</label>
+                                <input type="text" class="form-control" id="inputIncome" name="income" placeholder="fico_range_high">
+                            </div>
+                            <div class="form-group">
+                                <label class="input_labels" for="inputName">loan_status:</label>
+                                <input type="text" class="form-control" id="inputIncome" name="income" placeholder="loan_status">
+                            </div>
+                            <div class="form-group">
+                                <label class="input_labels" for="inputName">total_pymnt:</label>
+                                <input type="text" class="form-control" id="inputIncome" name="income" placeholder="total_pymnt">
+                            </div>
+                                <br><br>
+                            <button type="submit" class="btn btn-primary">Generate Result!</button>
+                            <br><br><br>
+                        </form>
+                        <h4>*Print Result here*</h4>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <hr>
+        </section>
+        <!-- END-USER MODEL 2-->
+        <section class="page-section" id="application" style="background-color: rgb(189, 239, 239) ;">
+            <h3 class="model_headers">Will your loan application be approved or rejected?</h3>
             <hr class="divider divider-light"/>
             <br>
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-lg-6 text-center">
-
                         <h3>INSERT IMAGE HERE</h3>
                     </div>
                     <div class="col-lg-6 text-center">
-                        <h2 class="text-white mt-0" style="font-size: 18px">Fill out the form below and click submit to find out!</h2>
-                        <form>
-                            <div class="mb-3">
-                              <!-- <label for="exampleInputEmail1" class="form-label">Input 1</label> -->
-                              <input type="test" value="Select [insert parameter name]" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        <h2 class="command_user">Fill out the form below and click submit to find out!</h2>
+                        <br>
+                        <form method="POST" action="/model" role="form", name="paymenttime">
+                        
+                            <label for ="parameter1">Parameter 1 title</label>
+                                <!-- between lines 70 & and 76 is an template of how to format parameters with dropdown values for end user to pick -->
+                                <select name="parameter1" id="parameter1">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                </select>
+                                <!-- between lines 78 & 81 is a template for the end user adding chosen text as a value -->
+                            <div class="form-group">
+                                <label for="inputName">Area Income</label>
+                                <input type="text" class="form-control" id="inputIncome" name="income" placeholder="Income">
                             </div>
-                            <div class="mb-3">
-                              <!-- <label for="exampleInputPassword1" class="form-label">Input 2</label> -->
-                              <input type="text" value="Select [insert parameter name]" class="form-control" id="exampleInputPassword1">
-                            </div>
-                            <div class="mb-3">
-                                <!-- <label for="exampleInputPassword1" class="form-label">Input 3</label> -->
-                                <input type="text" value="Select [insert parameter name]" class="form-control" id="exampleInputPassword1">
-                              </div>
-                              <div class="mb-3">
-                                <!-- <label for="exampleInputPassword1" class="form-label">Input 4</label> -->
-                                <input type="text" value="Select [insert parameter name]" class="form-control" id="exampleInputPassword1">
-                              </div>
-                              <div class="mb-3">
-                                <!-- <label for="exampleInputPassword1" class="form-label">Input 5</label> -->
-                                <input type="text" value="Select [insert parameter name]" class="form-control" id="exampleInputPassword1">
-                              </div>
+                            <br><br><br><br>
                             <button type="submit" class="btn btn-primary">Generate Result</button>
+                            <br><br><br><br>
                             <h4>Print Result here</h4>
                         </form>
                     </div>
                 </div>
             </div>
+            <br><br><br><br>
+            <hr>
         </section>
-
-        <!-- END-USER MODEL 2-->
-        <section class="page-section bg-primary" id="about">
-            <section class="page-section bg-primary" id="application">
-                <h3 style="text-align: center;">Will your loan application be approved or rejected?</h3>
-                <hr class="divider divider-light"/>
-                <br>
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-lg-6 text-center">
-                            <h3>INSERT IMAGE HERE</h3>
-                        </div>
-                        <div class="col-lg-6 text-center">
-                            <h2 class="text-white mt-0" style="font-size: 18px">Fill out the form below and click submit to find out!</h2>
-                            <form>
-                                <div class="mb-3">
-                                  <!-- <label for="exampleInputEmail1" class="form-label">Input 1</label> -->
-                                  <input type="test" value="Select [insert parameter name]" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                                </div>
-                                <div class="mb-3">
-                                  <!-- <label for="exampleInputPassword1" class="form-label">Input 2</label> -->
-                                  <input type="text" value="Select [insert parameter name]" class="form-control" id="exampleInputPassword1">
-                                </div>
-                                <div class="mb-3">
-                                    <!-- <label for="exampleInputPassword1" class="form-label">Input 3</label> -->
-                                    <input type="text" value="Select [insert parameter name]" class="form-control" id="exampleInputPassword1">
-                                  </div>
-                                  <div class="mb-3">
-                                    <!-- <label for="exampleInputPassword1" class="form-label">Input 4</label> -->
-                                    <input type="text" value="Select [insert parameter name]" class="form-control" id="exampleInputPassword1">
-                                  </div>
-                                  <div class="mb-3">
-                                    <!-- <label for="exampleInputPassword1" class="form-label">Input 5</label> -->
-                                    <input type="text" value="Select [insert parameter name]" class="form-control" id="exampleInputPassword1">
-                                  </div>
-                                <button type="submit" class="btn btn-primary">Generate Result</button>
-                                <h4>Print Result here</h4>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </section>
         
         
-            <!-- Tableau Stuff-->
-        <section class="page-section" id="tableau">
+        <!-- Tableau Stuff-->
+        <section class="page-section" id="tableau" style="background-color: rgb(189, 239, 239) ;">
             <div class="container px-4 px-lg-5">
                 <h2 class="text-center mt-0">Visualizations Section- This is where Tableau visualizations will go?
                 </h2>
@@ -193,7 +218,7 @@
             <br>
             <div class="row justify-content-center" id="meetteam_format" >
                     <div class = "col-md-2.4" class="card" style="width: 12.5rem;">
-                    <img id="team_pics" src="assets/img/dc_photo.jpg") class="card-img-top" >
+                    <img id="team_pics" src="../assets/img/dc_photo.jpg") class="card-img-top" >
                     <div class="card-body">
                     <br>
                    <p class="card-text">
@@ -212,7 +237,7 @@
                 
                 
                 <div class = "col-md-2.4" class="card" style="width: 12.5rem;" id="card_format">
-                    <img id="team_pics" src="assets/img/RG_photo.jpg" class="card-img-top">
+                    <img id="team_pics" src="../assets/img/RG_photo.jpg" class="card-img-top">
                     <br>
                     <div class="card-body">
                         <br>
@@ -228,7 +253,7 @@
                 </div>
     
                 <div class = "col-md-2.4" class="card" style="width: 12.5rem;" id="card_format">
-                    <img id="team_pics" src="assets/img/RL_photo.jpg" class="card-img-top">
+                    <img id="team_pics" src="../assets/img/RL_photo.jpg" class="card-img-top">
                     <div class="card-body">
                         <br>    
                         <p class="card-text">
@@ -244,7 +269,7 @@
     
     
                 <div class = "col-md-2.4" class="card" style="width: 12.5rem;" id="card_format">
-                    <img id="team_pics" src="assets/img/KL_photo.jpg" class="card-img-top">
+                    <img id="team_pics" src="../assets/img/KL_photo.jpg" class="card-img-top">
                     <div class="card-body">
                         <br>
                         <p class="card-text">
@@ -258,7 +283,7 @@
                     </div>
                 </div>
                 <div class = "col-md-2.4" class="card" style="width: 12.5rem;" id="card_format">
-                    <img id="team_pics" src="assets/img/CS_photo.jpg" class="card-img-top">
+                    <img id="team_pics" src="../assets/img/CS_photo.jpg" class="card-img-top">
                     <div class="card-body">
                         <br>
                         <p class="card-text">
@@ -298,7 +323,7 @@
         <!-- SimpleLightbox plugin JS-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
         <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
+        <script src="../static/js/scripts.js"></script>
         <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
         <!-- * *                               SB Forms JS                               * *-->
         <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
