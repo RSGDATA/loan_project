@@ -47,7 +47,7 @@
         </nav>
         <!-- Masthead-->
         <header class="masthead" style="background-image: url('../assets/img/handing_money.jpg')">
-            <h1 class="title_home">Peer-to-Peer Loan Exploration</h1>
+            <h1 class="title_home">Lending Club Loan Exploration</h1>
             <p></p>
         </header>
         <!-- About Section -->
@@ -65,7 +65,7 @@
 
         <!-- END-USER MODEL 1-->
         <section class="page-section" id="payment_time" style="background-color: rgb(189, 239, 239) ;">
-            <h3 class="model_headers">Will you make all of your loan payments on time?</h3>
+            <h3 class="model_headers">Will your loan be accepted?</h3>
             <hr class="divider divider-light"/>
             <div class="container">
                 <div class="row justify-content-center">
@@ -75,39 +75,47 @@
                     </div>
                     <div class="col-lg-6 text-center">
                         <h2 class="command_user">Fill out the form below and click the button to find out!</h2>
-                        <form method="POST" action="/model" role="form", name="paymenttime">
+                       
+                        <form method="POST" action="/acceptance_model" role="form", name="loan_acceptance">
                             <div class="form-group">
-                                <label class="input_labels" for="inputName">Recoveries:</label>
-                                <input type="text" class="form-control" id="inputIncome" name="income" placeholder="Recoveries">
+                                <label class="input_labels" for="inputName">Amount Requested:</label>
+                                <input type="text" class="form-control" id="inputIncome" name="amount_requested" placeholder="Amount Requested">
                             </div>
                               <!-- between lines 78 & 81 is a template for the end user adding chosen text as a value -->
                             <div class="form-group">
-                                <label class="input_labels" for="inputName">Total_rec_late_fee:</label>
-                                <input type="text" class="form-control" id="inputIncome" name="income" placeholder="Total_rec_late_fee">
+                                <label class="input_labels" for="inputName">Loan Title:</label>
+                                <input type="text" class="form-control" id="inputIncome" name="loan_title" placeholder="Loan Title">
                             </div>
 
                             <div class="form-group">
-                                <label class="input_labels" for="inputName">total_rec_prncp:</label>
-                                <input type="text" class="form-control" id="inputIncome" name="income" placeholder="total_rec_prncp">
+                                <label class="input_labels" for="inputName">Debt to Income Ratio:</label>
+                                <input type="text" class="form-control" id="inputIncome" name="dti_ratio" placeholder="Debt to Income Ratio">
                             </div>
 
                             <div class="form-group">
-                                <label class="input_labels" for="inputName">delinq_2yrs:</label>
-                                <input type="text" class="form-control" id="inputIncome" name="income" placeholder="delinq_2yrs">
+                                <label class="input_labels" for="inputName">State:</label>
+                                <input type="text" class="form-control" id="inputIncome" name="state" placeholder="State">
                             </div>
-                            <div class="form-group">
-                                <label class="input_labels" for="inputName">fico_range_high:</label>
-                                <input type="text" class="form-control" id="inputIncome" name="income" placeholder="fico_range_high">
-                            </div>
-                            <div class="form-group">
-                                <label class="input_labels" for="inputName">loan_status:</label>
-                                <input type="text" class="form-control" id="inputIncome" name="income" placeholder="loan_status">
-                            </div>
-                            <div class="form-group">
-                                <label class="input_labels" for="inputName">total_pymnt:</label>
-                                <input type="text" class="form-control" id="inputIncome" name="income" placeholder="total_pymnt">
-                            </div>
-                                <br><br>
+
+                            <label for="emp_length">Employment Length:</label>
+                            <br>
+                    
+                            <select name="emp_length" id="emp_length">
+                              <option value="<1">.5</option>
+                              <option value="1">1</option>
+                              <option value="2">2</option>
+                              <option value="3">3</option>
+                              <option value="4">4</option>
+                              <option value="5">5</option>
+                              <option value="6">6</option>
+                              <option value="7">7</option>
+                              <option value="8">8</option>
+                              <option value="9">9</option>
+                              <option value="10">10+</option>
+                            </select> 
+
+                            <br><br>
+
                             <button type="submit" class="btn btn-primary">Generate Result!</button>
                             <br><br><br>
                         </form>
