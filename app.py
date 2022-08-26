@@ -1,40 +1,19 @@
 import numpy as np
-import sqlalchemy
-from sqlalchemy.ext.automap import automap_base
-from sqlalchemy.orm import Session
-from sqlalchemy import create_engine, func
-from flask import Flask, jsonify, render_template
-from sqlalchemy import inspect 
- 
+import os
+
 from flask import (
     Flask,
     render_template,
-    jsonify,
     request,
     redirect)
-
-#################################################
-# Database Setup
-#################################################
-lending_tree_engine = create_engine("sqlite:///data.sqlite")
-
-#status_engine = create_engine("sqlite:///status.db")
-# reflect an existing database into a new model
-Lending_Tree_Base = automap_base()
-
-# reflect the tables
-Lending_Tree_Base.prepare(lending_tree_engine, reflect=True)
-
-# Save reference to the table
-# print(Lending_Tree_Base.classes.keys())
-
-lending_tree_data = Lending_Tree_Base.classes
 
 #################################################
 # Flask Setup
 #################################################
 app = Flask(__name__)
-app.config['JSON_SORT_KEYS'] = False
+
+# ---------------------------------------------------------
+# Web site
 
 @app.route("/")
 def home():
@@ -63,36 +42,53 @@ def home():
 #             Brand must exist in #5<hr>"
 #     )
 
-@app.route("/lending_tree_data")
-def data():
-    session = Session(lending_tree_engine)
+@app.route("/acceptance_model" , methods=["POST"])
+def acceptance_model():
     
-     # Perform a query to retrieve the data and precipitation scores
-    lending_tree_list = lending_tree_engine.execute("SELECT * FROM sales").fetchall()
-   
-    inspector = inspect(lending_tree_engine)
-    columns = inspector.get_columns('sales')
-    column_names=[]
-    for c in columns:
-        column_names.append(c['name'])
+    # <!-- Amount Requested, Loan Title, Debt-To-Income Ratio, State, Employment Length -->
+
+    amount_requested = request.form["amount_requested"]
+    if amount_requested == "":
+        amount_requested = 14224.16
+    amount_requested = float(amount_requested)
     
-   # Create a list of dictionaries to JSONify later for easy plotting
-    output_list=[]
-    # for the first 10 entries in kaggle_list coming from cis_2018.sqlite database...
-    for l in lending_tree_list[0:1000]:
-        temp_dict={}
-    #this is where we assign column rows to their corresponding column names
-        for c in range(0,len(column_names)):
-            temp_dict[column_names[c]]=l[c]
-    #append temp_dict to output_list
-        output_list.append(temp_dict)
-    output_list
+    loan_title = float(request.form["loan_title"])
+    
+    dti_ratio = request.form["dti_ratio"]
+    if dti_ratio == "":
+        dti_ratio = 88.77
+    dti_ratio = float(dti_ratio)
 
-    session.close()
+    state = float(request.form["state"])
 
-    return (
-        jsonify (output_list)
-    )  
+    emp_length = float(request.form["emp_length"])
+
+    X = [[amount_requested, loan_title, dti_ratio, state, emp_length]]
+
+    print(X)
+
+    filename = './Models/loan_acceptance_scaler.sav'
+    X_scaler = pickle.load(open(filename, 'rb'))
+    
+    X_scaled = X_scaler.transform(X)
+    
+    print(X_scaled)
+    
+    filename = './Models/loan_acceptance_model.sav'
+    loaded_model = pickle.load(open(filename, 'rb'))
+
+    print(loaded_model.predict(X_scaled))
+        
+    prediction = loaded_model.predict(X_scaled)
+    
+    prediction = prediction[0]
+    
+    if prediction == 0:
+        prediction = "Declined"
+    else:
+        prediction = "Accepted"
+    
+    return render_template("index.html", prediction = prediction)
    
 if __name__ == '__main__':
     app.run(debug=True)
