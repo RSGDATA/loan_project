@@ -52,16 +52,16 @@ def acceptance_model():
         amount_requested = 14224.16
     amount_requested = float(amount_requested)
     
-    loan_title = float(request.form["loan_title"])
+    loan_title = request.form["loan_title"]
     
     dti_ratio = request.form["dti_ratio"]
     if dti_ratio == "":
         dti_ratio = 88.77
     dti_ratio = float(dti_ratio)
 
-    state = float(request.form["state"])
+    state = request.form["state"]
 
-    emp_length = float(request.form["emp_length"])
+    emp_length = request.form["emp_length"]
 
     X = [[amount_requested, loan_title, dti_ratio, state, emp_length]]
 
