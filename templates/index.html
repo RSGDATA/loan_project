@@ -81,7 +81,7 @@
                                 <label class="input_labels" for="inputName">Amount Requested:</label>
                                 <input type="text" class="form-control" id="inputIncome" name="amount_requested" placeholder="Amount Requested">
                             </div>
-                              <!-- between lines 78 & 81 is a template for the end user adding chosen text as a value -->
+                            <p>Provided by the barrower.</p>                              <!-- between lines 78 & 81 is a template for the end user adding chosen text as a value -->
                               
                             <br>
 
@@ -89,6 +89,7 @@
                                 <label class="input_labels" for="inputName">Loan Title:</label>
                                 <input type="text" class="form-control" id="inputIncome" name="loan_title" placeholder="Loan Title">
                             </div>
+                            <p>Provided by the barrower.</p>
 
                             <br>
 
@@ -96,6 +97,8 @@
                                 <label class="input_labels" for="inputName">Debt to Income Ratio:</label>
                                 <input type="text" class="form-control" id="inputIncome" name="dti_ratio" placeholder="Debt to Income Ratio">
                             </div>
+                            <p>A ratio calculated using the borrower’s total monthly debt payments on the total debt obligations, excluding 
+                                mortgage and the requested LC loan, divided by the borrower’s self-reported monthly income.</p>
 
                             <br>
 
@@ -152,7 +155,8 @@
                               <option value="WV">West Virginia</option>
                               <option value="WI">Wisconsin</option>
                               <option value="WY">Wyoming</option>
-                             </select> 
+                             </select>  
+                             <p>State or District prospective applicant currently resides in.</p>
 
                              <br><br> 
 
@@ -172,6 +176,8 @@
                               <option value="9">9</option>
                               <option value="10">10+</option>
                             </select> 
+                            <p>Employment length in years. Possible values are between 0 and 10 where 0 
+                                means less than one year and 10 means ten or more years.</p>
 
                             <br><br>
 
@@ -206,7 +212,7 @@
                                 <label class="input_labels" for="inputName">Recoveries:</label>
                                 <input type="text" class="form-control" id="inputIncome" name="recoveries" placeholder="Recoveries">
                             </div>
-                              <!-- between lines 78 & 81 is a template for the end user adding chosen text as a value -->
+                            <p>Post charge off gross recovery.</p>
                               
                             <br>
 
@@ -214,6 +220,7 @@
                                 <label class="input_labels" for="inputName">Total Late Fees Received:</label>
                                 <input type="text" class="form-control" id="inputIncome" name="total_rec_late_fee" placeholder="Total Late Fees Received">
                             </div>
+                            <p>Late fees received to date.</p>
 
                             <br>
 
@@ -221,6 +228,7 @@
                                 <label class="input_labels" for="inputName">Total Principal Recieved:</label>
                                 <input type="text" class="form-control" id="inputIncome" name="total_rec_prncp" placeholder="Total Principal Recieved">
                             </div>
+                            <p>Principal received to date.</p>
 
                             <br>
 
@@ -228,6 +236,7 @@
                                 <label class="input_labels" for="inputName">Total Late Payments Last 2 Years:</label>
                                 <input type="text" class="form-control" id="inputIncome" name="delinq_2yrs" placeholder="Total Late Payments">
                             </div>
+                            <p>The number of 30+ days past-due incidences of delinquency in the borrower’s credit file for the past 2 years.</p>
 
                             <br>
 
@@ -262,15 +271,17 @@
                                 <label class="input_labels" for="inputName">FICO Score:</label>
                                 <input type="text" class="form-control" id="inputIncome" name="fico_range_high" placeholder="Score">
                             </div>
+                            <p>The borrower’s last FICO pulled belongs to.</p>
 
                             <br>
 
-                            <label for="emp_length">Loan Status:</label>
+                            <label for="loan_status">Loan Status:</label>
                             <br>
                             <select name="loan_status" id="loan_status">
                               <option value="Select">- Select -</option>
                               <option value="Fully Paid">On Time</option>
                               <option value="Late">Late</option>
+                            <p>Current status of the loan.</p>
                            
                             <br>
                             
@@ -278,6 +289,7 @@
                                 <label class="input_labels" for="inputName">Payment Total:</label>
                                 <input type="text" class="form-control" id="inputIncome" name="total_pymnt" placeholder="Total">
                             </div>
+                            <p>Payments received to date for total amount funded.</p>
 
                             <br><br><br><br>
 
