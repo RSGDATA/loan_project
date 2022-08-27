@@ -82,19 +82,27 @@
                                 <input type="text" class="form-control" id="inputIncome" name="amount_requested" placeholder="Amount Requested">
                             </div>
                               <!-- between lines 78 & 81 is a template for the end user adding chosen text as a value -->
+                              
+                            <br>
+
                             <div class="form-group">
                                 <label class="input_labels" for="inputName">Loan Title:</label>
                                 <input type="text" class="form-control" id="inputIncome" name="loan_title" placeholder="Loan Title">
                             </div>
+
+                            <br>
 
                             <div class="form-group">
                                 <label class="input_labels" for="inputName">Debt to Income Ratio:</label>
                                 <input type="text" class="form-control" id="inputIncome" name="dti_ratio" placeholder="Debt to Income Ratio">
                             </div>
 
+                            <br>
+
                             <label for="state">State:</label>
                             <br>
-                            <select name="state" id="state">
+                            <select name="state" id="state" placeholder="State">
+                              <option value="Select">- Select -</option>
                               <option value="AL">Alabama</option>
                               <option value="AK">Alaska</option>
                               <option value="AZ">Arizona</option>
@@ -151,6 +159,7 @@
                             <label for="emp_length">Employment Length (Years):</label>
                             <br>
                             <select name="emp_length" id="emp_length">
+                              <option value="Select">- Select -</option>
                               <option value="1">less than 1</option>
                               <option value="1">1</option>
                               <option value="2">2</option>
@@ -176,6 +185,8 @@
             <br>
             <hr>
         </section>
+
+        
         <!-- END-USER MODEL 2-->
         <section class="page-section" id="application" style="background-color: rgb(189, 239, 239) ;">
             <h3 class="model_headers">Will your loan application be approved or rejected?</h3>
@@ -184,12 +195,12 @@
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-lg-6 text-center">
-                        <h3>INSERT IMAGE HERE</h3>
+                        <img id="acceptedvsrejected" src="../assets/img/acc_vs_rej.jpeg">
                     </div>
                     <div class="col-lg-6 text-center">
                         <h2 class="command_user">Fill out the form below and click submit to find out!</h2>
                         <br>
-                        <form method="POST" action="/model" role="form", name="paymenttime">
+                        <form method="POST" action="/late_model" role="form", name="paymenttime">
                         
                             <label for ="parameter1">Parameter 1 title</label>
                                 <!-- between lines 70 & and 76 is an template of how to format parameters with dropdown values for end user to pick -->
