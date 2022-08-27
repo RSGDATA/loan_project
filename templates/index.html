@@ -92,8 +92,14 @@
                             <div class="form-group">
                                 <label class="input_labels" for="inputName">Amount Requested:</label>
                                 <input type="text" class="form-control" id="inputIncome" name="amount_requested" placeholder="Amount Requested">
+                                <!-- adding tool tip -->
+                                <span class="form-group-text">
+                                    <span class="tt" data-bs-placement="right" title="FILL IN WITH TEXT TO BE DISPLAYED">
+                                        <i class="bi bi-question-circle"></i>
+                                    </span>
+                                </span>
                             </div>
-                            <p>Provided by the barrower.</p>                              <!-- between lines 78 & 81 is a template for the end user adding chosen text as a value -->
+                            <p>Provided by the barrower.</p>                             
                               
                             <br>
                         
@@ -499,6 +505,12 @@
         <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
         <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
         <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+        <!-- enabling tooltips + connecting with Java -->
+        <script>const tooltips = document.querySelectorAll('.tt')
+                tooltips.forEach(t => {
+                    new bootstrap.Tooltip(t)
+                 })
+            </script>
     </body>
 </html>
 
