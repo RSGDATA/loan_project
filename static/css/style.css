@@ -10005,6 +10005,10 @@ textarea.form-control-lg {
     text-align: center !important;
   }
 }
+
+.custom-tooltip {
+  --bs-tooltip-bg: var(--bs-primary);
+}
 @media (min-width: 1200px) {
   .float-xl-start {
     float: left !important;
