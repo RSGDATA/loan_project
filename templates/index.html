@@ -84,11 +84,24 @@
                             <p>Provided by the barrower.</p>                              <!-- between lines 78 & 81 is a template for the end user adding chosen text as a value -->
                               
                             <br>
+                        
+                            <label for="loan_title">Loan Title:</label>
+                            <br>
+                            <select name="loan_title" id="loan_title" placeholder="Loan Title">
+                              <option value="Select">- Select -</option>
+                              <option value="DEBT_CONSOLIDATION">Debt Consolidation</option>
+                              <option value="CC">Credit Card</option>
+                              <option value="IMPROVEMENT">Improvement</option>
+                              <option value="No Response">No Response</option>
+                              <option value="Other">Other</option>
+                              <option value="MAJOR_PURCHASE">Major Purchase</option>
+                              <option value="HOME">Home</option>
+                              <option value="MEDICAL">Medical</option>
+                              <option value="BUSINESS">Business</option>
+                              <option value="AUTO">Auto</option>
+                              <option value="vacation">Vacation</option>
+                             </select>  
 
-                            <div class="form-group">
-                                <label class="input_labels" for="inputName">Loan Title:</label>
-                                <input type="text" class="form-control" id="inputIncome" name="loan_title" placeholder="Loan Title">
-                            </div>
                             <p>Provided by the barrower.</p>
 
                             <br>
@@ -356,14 +369,15 @@
        
 
         <!-- Meet the Team-->
-        <section class="content-section text-black" id="meet_the_team" style="z-index: 30; text-align: center; background-color:  grey" ;>
+        <section class="content-section text-black" id="meet_the_team" style="z-index: 30; text-align: center; background-color:  rgb(206, 201, 201)" ;>
             <br>
             <br>
             <h2 class="team_header">Meet the Team!</h2>
             <br>
             <br>
             <div class="row justify-content-center" id="meetteam_format" >
-                    <div class = "col-md-2.4" class="card" style="width: 12.5rem;">
+                    <!-- Daniel card -->
+                <div class = "col-md-2.4" class="card" style="width: 12.5rem;">
                     <img id="team_pics" src="../assets/img/dc_photo.jpg") class="card-img-top" >
                     <div class="card-body">
                     <br>
@@ -371,9 +385,9 @@
                         <h8 class="name">Daniel Czornyj</h8>
                         <br>
                         <br>
-                        <a class="hyper-links" href="https://github.com/dczornyj" target="_blank" >Github</a>
+                        <a class="btn" href="https://www.linkedin.com/in/daniel-czornyj-b602771bb" target="_blank" ><i class="bi bi-linkedin"></i></a>
+                        <a class="btn" href="https://github.com/dczornyj" target="_blank" ><i class="bi bi-github"></i></a>  
                         <br>
-                        <a class="hyper-links" href="https://www.linkedin.com/in/daniel-czornyj-b602771bb/" target="_blank">LinkedIn</a>
                     </p>
                     <p id="text" class="card-text">
     
@@ -381,7 +395,7 @@
                     </div>
                 </div>
                 
-                
+                <!-- RG card -->
                 <div class = "col-md-2.4" class="card" style="width: 12.5rem;" id="card_format">
                     <img id="team_pics" src="../assets/img/RG_photo.jpg" class="card-img-top">
                     <br>
@@ -391,29 +405,31 @@
                           <h8 class="name">Robert Gonzalez</h8>
                           <br>
                           <br>
-                          <a class="hyper-links" href = "https://github.com/RSGDATA" target="_blank">Github</a>
+                          <a class="btn" href= "https://www.linkedin.com/in/robert-gonzalez-20ab4a234/" target="_blank" ><i class="bi bi-linkedin"></i></a> 
+                          <a class="btn" href="https://github.com/RSGDATA"  target="_blank" ><i class="bi bi-github"></i></a> 
                           <br>
-                          <a class="hyper-links" href="https://www.linkedin.com/in/robert-gonzalez-20ab4a234/" target="_blank" >LinkedIn</a>
                     </p>
                     </div>
                 </div>
-    
+
+                <!-- RL card -->
                 <div class = "col-md-2.4" class="card" style="width: 12.5rem;" id="card_format">
                     <img id="team_pics" src="../assets/img/RL_photo.jpg" class="card-img-top">
                     <div class="card-body">
                         <br>    
                         <p class="card-text">
-                            <h8 class="name_rob">Robert Lane</h8>
+                            <h8 class="name">Robert Lane</h8>
                             <br>
                             <br>
-                            <a class="hyper-links" href="https://github.com/RL-Lane" target="_blank">Github</a>
+                            <a class="btn" href="https://www.linkedin.com/in/robert-lane-jr/" target="_blank" ><i class="bi bi-linkedin"></i></a>
+                            <a class="btn" href="https://github.com/RL-Lane"  target="_blank" ><i class="bi bi-github"></i></a> 
                             <br>
-                            <a class="hyper-links" href="https://www.linkedin.com/in/robert-lane-jr/" target="_blank">LinkedIn</a>
+
                         </p> 
                     </div>
                 </div>
     
-    
+                <!-- Krystal card -->
                 <div class = "col-md-2.4" class="card" style="width: 12.5rem;" id="card_format">
                     <img id="team_pics" src="../assets/img/KL_photo.jpg" class="card-img-top">
                     <div class="card-body">
@@ -422,23 +438,22 @@
                             <h8 class="name">Krystal Lewis</h8>
                             <br>
                             <br>
-                            <a class="hyper-links" href="https://github.com/klew1230" target="_blank">Github</a>
-                            <br>
-                            <a class="hyper-links" href="https://www.linkedin.com/in/krystallewis91/">LinkedIn</a>
+                            <a class="btn" href="https://www.linkedin.com/in/krystallewis91/" target="_blank" ><i class="bi bi-linkedin"></i></a>
+                            <a class="btn" href="https://github.com/klew1230"  target="_blank" ><i class="bi bi-github"></i></a> 
                         </p>
                     </div>
                 </div>
+                <!-- Cody card -->
                 <div class = "col-md-2.4" class="card" style="width: 12.5rem;" id="card_format">
                     <img id="team_pics" src="../assets/img/CS_photo.jpg" class="card-img-top">
                     <div class="card-body">
                         <br>
                         <p class="card-text">
-                            <h8 class="name">Cody Sultenfuss</h8>
+                            <h8 class="name" >Cody Sultenfuss</h8>
                             <br>
                             <br>
-                            <a class="hyper-links" href="https://github.com/sultenfussc" target="_blank">Github</a>
-                            <br>
-                            <a class="hyper-links" href="https://www.linkedin.com/in/cody-sultenfuss-067407a1/" target="_blank">LinkedIn</a>
+                            <a class="btn" href="https://www.linkedin.com/in/cody-sultenfuss-067407a1/" target="_blank" ><i class="bi bi-linkedin"></i></a>
+                            <a class="btn" href="https://github.com/sultenfussc"  target="_blank" ><i class="bi bi-github"></i></a>
                         </p>
                     </div>
                 </div>

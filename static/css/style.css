@@ -64,6 +64,12 @@
   --bs-body-bg: #fff;
 }
 
+.name {
+  font-weight: bolder;
+  font-size: 15px;
+}
+
+
 
 #timepic {
   width: 550px;
@@ -86,6 +92,8 @@
   font-weight: bolder;
   
 }
+
+
 
 .input_labels {
   color:black;
