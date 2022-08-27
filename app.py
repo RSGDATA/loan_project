@@ -93,32 +93,45 @@ def acceptance_model():
 ##################################################
 # Model 2
 ##################################################
-@app.route("/late_model" , methods=["POST"])
-def late_model():
+@app.route("/time_model" , methods=["POST"])
+def time_model():
     
-    # <!-- Amount Requested, Loan Title, Debt-To-Income Ratio, State, Employment Length -->
+    # <!-- "recoveries","total_rec_late_fee","total_rec_prncp","delinq_2yrs","fico_range_high","loan_status","total_pymnt"-->
 
-    amount_requested = request.form["amount_requested"]
-    if amount_requested == "":
-        amount_requested = 14224.16
-    amount_requested = float(amount_requested)
+    recoveries = request.form["amount_requested"] #text
+    if recoveries == "":
+        recoveries = 154.89
+    recoveries = float(recoveries)
+        
+    total_rec_late_fee = request.form["total_rec_late_fee"] #text
+    if total_rec_late_fee == "":
+        total_rec_late_fee = 1.48
+    total_rec_late_fee = float(total_rec_late_fee)
     
-    loan_title = request.form["loan_title"]
-    
-    dti_ratio = request.form["dti_ratio"]
-    if dti_ratio == "":
-        dti_ratio = 88.77
-    dti_ratio = float(dti_ratio)
+    total_rec_prncp = request.form["total_rec_prncp"] #text
+    if total_rec_prncp == "":
+        total_rec_prncp = 9853.52
+    total_rec_prncp = float(total_rec_prncp)
 
-    state = request.form["state"]
+    delinq_2yrs = request.form["delinq_2yrs"] # text or dropdown 0-16, 18, 19
 
-    emp_length = request.form["emp_length"]
+    fico_range_high = request.form["fico_range_high"] #text
+    if fico_range_high == "":
+        fico_range_high = 701.15
+    fico_range_high = float(fico_range_high) 
 
-    X = [[amount_requested, loan_title, dti_ratio, state, emp_length]]
+    loan_status = request.form["loan_status"] #dropdown --> Fully Paid vs Late
+
+    total_pymnt = request.form["total_pymnt"] #text
+    if total_pymnt == "":
+        total_pymnt = 12517.59
+    total_pymnt = float(total_pymnt)
+
+    X = [[recoveries, total_rec_late_fee, total_rec_prncp, delinq_2yrs, fico_range_high, loan_status, total_pymnt]]
 
     print(X)
 
-    filename = './Models/loan_acceptance_scaler.sav'
+    filename = './Models/loan_status_predictor.sav'
     X_scaler = pickle.load(open(filename, 'rb'))
     
     X_scaled = X_scaler.transform(X)
@@ -135,9 +148,9 @@ def late_model():
     prediction = prediction[0]
     
     if prediction == 0:
-        prediction = "Declined"
+        prediction = "Late"
     else:
-        prediction = "Accepted"
+        prediction = "Fully Paid"
     
     return render_template("index.html", prediction = prediction)
    
