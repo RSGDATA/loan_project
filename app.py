@@ -41,9 +41,60 @@ def home():
 #         f"<h4>8: Returns summary data for a single make in Cargurus Scraped Data:</h4> /api/v1.0/scraped/msrp/&lt;make&gt;<br/><br>\
 #             Brand must exist in #5<hr>"
 #     )
-
+##################################################
+# Model 1
+##################################################
 @app.route("/acceptance_model" , methods=["POST"])
 def acceptance_model():
+    
+    # <!-- Amount Requested, Loan Title, Debt-To-Income Ratio, State, Employment Length -->
+
+    amount_requested = request.form["amount_requested"]
+    if amount_requested == "":
+        amount_requested = 14224.16
+    amount_requested = float(amount_requested)
+    
+    loan_title = request.form["loan_title"]
+    
+    dti_ratio = request.form["dti_ratio"]
+    if dti_ratio == "":
+        dti_ratio = 88.77
+    dti_ratio = float(dti_ratio)
+
+    state = request.form["state"]
+
+    emp_length = request.form["emp_length"]
+
+    X = [[amount_requested, loan_title, dti_ratio, state, emp_length]]
+
+    print(X)
+
+    filename = './Models/loan_acceptance_scaler.sav'
+    X_scaler = pickle.load(open(filename, 'rb'))
+    
+    X_scaled = X_scaler.transform(X)
+    
+    print(X_scaled)
+    
+    filename = './Models/loan_acceptance_model.sav'
+    loaded_model = pickle.load(open(filename, 'rb'))
+
+    print(loaded_model.predict(X_scaled))
+        
+    prediction = loaded_model.predict(X_scaled)
+    
+    prediction = prediction[0]
+    
+    if prediction == 0:
+        prediction = "Declined"
+    else:
+        prediction = "Accepted"
+
+##################################################
+# Model 2
+##################################################
+@app.route("/late_model" , methods=["POST"])
+def late_model():
     
     # <!-- Amount Requested, Loan Title, Debt-To-Income Ratio, State, Employment Length -->
 
