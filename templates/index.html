@@ -120,7 +120,7 @@
                        <br><br>
                         <form method="POST" id="model1" action="/acceptance_model" role="form", name="loan_acceptance">
                             <div>
-                                <label class="model1_headers" for="inputName">Amount Requested:</label>
+                                <label class="modelparam_headers" for="inputName">Amount Requested:</label>
                                 <input type="text" class="form" id="inputIncome" name="amount_requested" placeholder="Amount Requested">
                                 <!-- adding tool tip -->
                                 <span class="form-group-text">
@@ -132,7 +132,7 @@
                               
                             <br>
                             <div>
-                                <label class="model1_headers" for="loan_title">Loan Title:</label>
+                                <label class="modelparam_headers" for="loan_title">Loan Title:</label>
                                 <select name="loan_title" id="loan_title" placeholder="Loan Title">
                                 <option value="Select">- Select -</option>
                                 <option value="DEBT_CONSOLIDATION">Debt Consolidation</option>
@@ -157,7 +157,7 @@
                             <br>
 
                             <div>
-                                <label class="model1_headers" for="inputName">Debt to Income Ratio:</label>
+                                <label class="modelparam_headers" for="inputName">Debt to Income Ratio:</label>
                                 <input type="text" class="form" id="inputIncome" name="dti_ratio" placeholder="Debt to Income Ratio">
                                 <span class="form-group-text">
                                     <span class="tt" data-bs-placement="right" title="A ratio calculated using the borrower’s total monthly debt payments on the total debt obligations, excluding 
@@ -170,7 +170,7 @@
                             <div>
                                 <br>
 
-                                <label class="model1_headers" for="state">State:</label>
+                                <label class="modelparam_headers" for="state">State:</label>
                                 <select name="state" id="state" placeholder="State">
                                 <option value="Select">- Select -</option>
                                 <option value="AL">Alabama</option>
@@ -234,7 +234,7 @@
 
 
                             <div>
-                                <label class="model1_headers" for="emp_length">Employment Length (Years):</label>
+                                <label class="modelparam_headers" for="emp_length">Employment Length (Years):</label>
                                 <select name="emp_length" id="emp_length">
                                 <option value="Select">- Select -</option>
                                 <option value=0.5>less than 1</option>
@@ -293,89 +293,112 @@
                         <br>
                         <form method="POST" action="/time_model" role="form", name="paymenttime">
                         
-                            <div class="form-group">
-                                <label class="input_labels" for="inputName">Recoveries:</label>
-                                <input type="text" class="form-control" id="inputIncome" name="recoveries" placeholder="Recoveries">
+                            <div>
+                                <label class="modelparam_headers" for="inputName">Recoveries:</label>
+                                <input type="text" class="form" id="inputIncome" name="recoveries" placeholder="Recoveries">
+                                <span class="form-group-text">
+                                    <span class="tt" data-bs-placement="right" title="Post charge off gross recovery"> <i class="bi bi-question-circle"></i>
+                                    </span>
+                                </span>
                             </div>
-                            <p>Post charge off gross recovery.</p>
                               
                             <br>
 
-                            <div class="form-group">
-                                <label class="input_labels" for="inputName">Total Late Fees Received:</label>
-                                <input type="text" class="form-control" id="inputIncome" name="total_rec_late_fee" placeholder="Total Late Fees Received">
+                            <div>
+                                <label class="modelparam_headers" for="inputName">Total Late Fees Received:</label>
+                                <input type="text" class="form" id="inputIncome" name="total_rec_late_fee" placeholder="Total Late Fees Received">
+                                <span class="form-group-text">
+                                    <span class="tt" data-bs-placement="right" title="Late Fees Received to Date"> <i class="bi bi-question-circle"></i>
+                                    </span>
+                                </span>
                             </div>
-                            <p>Late fees received to date.</p>
 
                             <br>
 
-                            <div class="form-group">
-                                <label class="input_labels" for="inputName">Total Principal Recieved:</label>
-                                <input type="text" class="form-control" id="inputIncome" name="total_rec_prncp" placeholder="Total Principal Recieved">
+                            <div>
+                                <label class="modelparam_headers" for="inputName">Total Principal Recieved:</label>
+                                <input type="text" class="form" id="inputIncome" name="total_rec_prncp" placeholder="Total Principal Recieved">
+                                <span class="form-group-text">
+                                    <span class="tt" data-bs-placement="right" title="Principal amount received to date."> <i class="bi bi-question-circle"></i>
+                                    </span>
+                                </span>
                             </div>
-                            <p>Principal received to date.</p>
 
                             <br>
 
-                            <div class="form-group">
-                                <label class="input_labels" for="inputName">Total Late Payments Last 2 Years:</label>
-                                <input type="text" class="form-control" id="inputIncome" name="delinq_2yrs" placeholder="Total Late Payments">
+                            <h4 style="font-style: italic">Need to look at Notebook RG used to create model to double check which features need to be displayed here</h4>   
+                            
+                            <div>
+                                <label class="modelparam_headers" for="inputName">Total Late Payments Last 2 Years:</label>
+                                <input type="text" class="form" id="inputIncome" name="delinq_2yrs" placeholder="Total Late Payments">
+                                <span class="form-group-text">
+                                    <span class="tt" data-bs-placement="right" title="The number of 30+ days past-due incidences of delinquency in the borrower’s credit file for the past 2 years."> <i class="bi bi-question-circle"></i>
+                                    </span>
+                                </span>
                             </div>
-                            <p>The number of 30+ days past-due incidences of delinquency in the borrower’s credit file for the past 2 years.</p>
 
                             <br>
-
-                            <label for="delinq_2yrs">Total Late Payments Last 2 Years:</label>
-                            <br>
-                            <select name="delinq_2yrs" id="delinq_2yrs" placeholder="Years">
-                              <option value="Total Late Payments">- Total Late Payments -</option>
-                              <option value="0.0">0</option>
-                              <option value="1.0">1</option>
-                              <option value="2.0">2</option>
-                              <option value="3.0">3</option>
-                              <option value="4.0">4</option>
-                              <option value="5.0">5</option>
-                              <option value="6.0">6</option>
-                              <option value="7.0">7</option>
-                              <option value="8.0">8</option>
-                              <option value="9.0">9</option>
-                              <option value="10.0">10</option>
-                              <option value="11.0">11</option>
-                              <option value="12.0">12</option>
-                              <option value="13.0">13</option>
-                              <option value="14.0">14</option>
-                              <option value="15.0">15</option>
-                              <option value="16.0">16</option>
-                              <option value="18.0">18</option>
-                              <option value="19.0">19</option>
-                            </select> 
-
+                            <div>
+                                <label class="modelparam_headers" for="delinq_2yrs">Total Late Payments Last 2 Years:</label>
+                                <select name="delinq_2yrs" id="delinq_2yrs" placeholder="Years">
+                                <option value="Total Late Payments">- Total Late Payments -</option>
+                                <option value="0.0">0</option>
+                                <option value="1.0">1</option>
+                                <option value="2.0">2</option>
+                                <option value="3.0">3</option>
+                                <option value="4.0">4</option>
+                                <option value="5.0">5</option>
+                                <option value="6.0">6</option>
+                                <option value="7.0">7</option>
+                                <option value="8.0">8</option>
+                                <option value="9.0">9</option>
+                                <option value="10.0">10</option>
+                                <option value="11.0">11</option>
+                                <option value="12.0">12</option>
+                                <option value="13.0">13</option>
+                                <option value="14.0">14</option>
+                                <option value="15.0">15</option>
+                                <option value="16.0">16</option>
+                                <option value="18.0">18</option>
+                                <option value="19.0">19</option>
+                                </select> 
+                                <span class="form-group-text">
+                                    <span class="tt" data-bs-placement="right" title="Total Late Payments made in the last two years"> <i class="bi bi-question-circle"></i>
+                                    </span>
+                                </span>
+                            </div>
                             <br><br>
 
-                            <div class="form-group">
-                                <label class="input_labels" for="inputName">FICO Score:</label>
-                                <input type="text" class="form-control" id="inputIncome" name="fico_range_high" placeholder="Score">
+                            <div>
+                                <label class="modelparam_headers" for="inputName">FICO Score:</label>
+                                <input type="text" class="form" id="inputIncome" name="fico_range_high" placeholder="Score">
+                                <span class="form-group-text">
+                                    <span class="tt" data-bs-placement="right" title="The borrower’s most recent Credit Score pulled."> <i class="bi bi-question-circle"></i>
+                                    </span>
+                                </span>
                             </div>
-                            <p>The borrower’s last FICO pulled belongs to.</p>
 
-                            <br>
-
-                            <label for="loan_status">Loan Status:</label>
-                            <br>
-                            <select name="loan_status" id="loan_status">
-                              <option value="Select">- Select -</option>
-                              <option value="Fully Paid">On Time</option>
-                              <option value="Late">Late</option>
-                            <p>Current status of the loan.</p>
-                           
                             <br>
                             
-                            <div class="form-group">
-                                <label class="input_labels" for="inputName">Payment Total:</label>
-                                <input type="text" class="form-control" id="inputIncome" name="total_pymnt" placeholder="Total">
+                            <!-- <div>
+                                <label class="modelparam_headers" for="loan_status">Loan Status:</label>
+                                <select name="loan_status" id="loan_status">
+                                <option value="Select">- Select -</option>
+                                <option value="Fully Paid">On Time</option>
+                                <option value="Late">Late</option>
+                                <p>Current status of the loan.</p>
                             </div>
-                            <p>Payments received to date for total amount funded.</p>
-
+                            -->
+                            <br>
+                            
+                            <div>
+                                <label class="modelparam_headers" for="inputName">Payment Total:</label>
+                                <input type="text" class="form" id="inputIncome" name="total_pymnt" placeholder="Total">
+                                <span class="form-group-text">
+                                    <span class="tt" data-bs-placement="right" title="Payments received to date for the total amount funded."> <i class="bi bi-question-circle"></i>
+                                    </span>
+                                </span>
+                            </div>
                             <br><br><br><br>
 
                             <button type="submit" class="btn btn-primary">Generate Result</button>
