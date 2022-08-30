@@ -118,7 +118,7 @@
                     <div class="col-lg-6 text-center">
                         <h2 class="command_user">Fill out the form below and click the button to find out!</h2>
                        <br><br>
-                        <form method="POST" id="model1" action="/acceptance_model" role="form", name="loan_acceptance">
+                        <form method="POST" class="model1" action="/acceptance_model" role="form", name="loan_acceptance">
                             <div>
                                 <label class="modelparam_headers" for="inputName">Amount Requested:</label>
                                 <input type="text" class="form" id="inputIncome" name="amount_requested" placeholder="Amount Requested">
@@ -291,7 +291,7 @@
                     <div class="col-lg-6 text-center">
                         <h2 class="command_user">Fill out the form below and click submit to find out!</h2>
                         <br>
-                        <form method="POST" action="/time_model" role="form", name="paymenttime">
+                        <form method="POST" class="model1" action="/time_model" role="form", name="paymenttime">
                         
                             <div>
                                 <label class="modelparam_headers" for="inputName">Recoveries:</label>
@@ -399,12 +399,18 @@
                                     </span>
                                 </span>
                             </div>
-                            <br><br><br><br>
+                            <br><br>
+                            <div>
+                                <input type="reset">
+                            </div>
+                            
+                            <br>
 
                             <button type="submit" class="btn btn-primary">Generate Result</button>
-                            <br><br><br><br>
-                            <h4>*Print Result Here*</h4>
+                            <br><br>
                         </form>
+                        <br><br>
+                        <h4>*Print Result Here*</h4>
                     </div>
                 </div>
             </div>
