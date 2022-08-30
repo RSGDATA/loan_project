@@ -69,6 +69,16 @@
   font-size: 15px;
 }
 
+.about_subheader {
+  font-size: 25px;
+  text-align: center;
+}
+
+#about_section_header {
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; 
+  text-align: center;
+  font-size:65px;
+}
 
 
 #timepic {
@@ -98,6 +108,16 @@
 .input_labels {
   color:black;
   margin-right: 300px;
+}
+#model1 {
+  padding: 10px;
+  padding-top: 30px;
+  background-color: rgb(211, 204, 204);
+}
+
+.model1_headers {
+  font-size: 18px;
+  font-weight: bold;
 }
 
 
