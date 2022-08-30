@@ -237,17 +237,17 @@
                                 <label class="model1_headers" for="emp_length">Employment Length (Years):</label>
                                 <select name="emp_length" id="emp_length">
                                 <option value="Select">- Select -</option>
-                                <option value="1">less than 1</option>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                                <option value="6">6</option>
-                                <option value="7">7</option>
-                                <option value="8">8</option>
-                                <option value="9">9</option>
-                                <option value="10">10+</option>
+                                <option value=0.5>less than 1</option>
+                                <option value=1>1</option>
+                                <option value=2>2</option>
+                                <option value=3>3</option>
+                                <option value=4>4</option>
+                                <option value=5>5</option>
+                                <option value=6>6</option>
+                                <option value=7>7</option>
+                                <option value=8>8</option>
+                                <option value=9>9</option>
+                                <option value=10>10+</option>
                                 </select> 
                                 <span class="form-group-text">
                                     <span class="tt" data-bs-placement="right" title="Employment length in years. Possible values are between 0 and 10 where 0 
@@ -265,7 +265,11 @@
                             <br>
                         </form>
                         <br><br>
-                        <h4>*Print Result Here*</h4>
+                        <h4> {% if prediction %} 
+                            <div class="prediction">
+                              Your predicted price is: {{prediction}}
+                            </div>
+                          {% endif %}</h4>
                     </div>
                 </div>
             </div>
