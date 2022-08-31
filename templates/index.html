@@ -46,9 +46,8 @@
             </div>
         </nav>
         <!-- Masthead-->
-        <header class="masthead" style="background-image: url('../assets/img/handing_money.jpg')">
+        <header class="masthead" id="mastheadpic">
             <h1 class="title_home">Lending Club Loan Exploration</h1>
-            <!-- <p></p> -->
         </header>
         <!-- About Section -->
         <section class="page-section" id="about" style="background-color: rgb(189, 239, 239) ;">
@@ -113,7 +112,7 @@
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-lg-6 text-center">
-                        <img id="timepic" src="../assets/img/timeticking.jpg">
+                        <img id="timepic" src= "{{url_for ('static',filename='assets/img/timeticking.jpg')}}">
                     </div>
                     <div class="col-lg-6 text-center">
                         <h2 class="command_user">Fill out the form below and click the button to find out!</h2>
@@ -286,7 +285,7 @@
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-lg-6 text-center">
-                        <img id="acceptedvsrejected" src="../assets/img/accepted_rejected.png">
+                        <img id="acceptedvsrejected" src="{{url_for ('static',filename='assets/img/acc_vs_rej.jpeg')}}">
                     </div>
                     <div class="col-lg-6 text-center">
                         <h2 class="command_user">Fill out the form below and click submit to find out!</h2>
@@ -477,7 +476,7 @@
             <div class="row justify-content-center" id="meetteam_format" >
                     <!-- Daniel card -->
                 <div class = "col-md-2.4" class="card" style="width: 12.5rem;">
-                    <img id="team_pics" src="../assets/img/dc_photo.jpg") class="card-img-top" >
+                    <img id="team_pics" src="{{url_for ('static',filename='assets/img/dc_photo.jpg')}}") class="card-img-top" >
                     <div class="card-body">
                     <br>
                    <p class="card-text">
@@ -496,7 +495,7 @@
                 
                 <!-- RG card -->
                 <div class = "col-md-2.4" class="card" style="width: 12.5rem;" id="card_format">
-                    <img id="team_pics" src="../assets/img/RG_photo.jpg" class="card-img-top">
+                    <img id="team_pics" src="{{url_for ('static',filename='assets/img/RG_photo.jpg')}}" class="card-img-top">
                     <br>
                     <div class="card-body">
                         <br>
@@ -513,7 +512,7 @@
 
                 <!-- RL card -->
                 <div class = "col-md-2.4" class="card" style="width: 12.5rem;" id="card_format">
-                    <img id="team_pics" src="../assets/img/RL_photo.jpg" class="card-img-top">
+                    <img id="team_pics" src="{{url_for ('static',filename='assets/img/RL_photo.jpg')}}" class="card-img-top">
                     <div class="card-body">
                         <br>    
                         <p class="card-text">
@@ -530,7 +529,7 @@
     
                 <!-- Krystal card -->
                 <div class = "col-md-2.4" class="card" style="width: 12.5rem;" id="card_format">
-                    <img id="team_pics" src="../assets/img/KL_photo.jpg" class="card-img-top">
+                    <img id="team_pics" src="{{url_for ('static',filename='assets/img/KL_photo.jpg')}}" class="card-img-top">
                     <div class="card-body">
                         <br>
                         <p class="card-text">
@@ -544,7 +543,7 @@
                 </div>
                 <!-- Cody card -->
                 <div class = "col-md-2.4" class="card" style="width: 12.5rem;" id="card_format">
-                    <img id="team_pics" src="../assets/img/CS_photo.jpg" class="card-img-top">
+                    <img id="team_pics" src="{{url_for ('static',filename='assets/img/CS_photo.jpg')}}" class="card-img-top">
                     <div class="card-body">
                         <br>
                         <p class="card-text">
@@ -568,7 +567,7 @@
                 <h1 style="text-align: center;">Check out our other work!</h1>
                 <div class="card" style="width: 18rem; text-align: center; background-color: beige;">
                     <br>
-                    <img src="../assets/img/car_climbing.jpg" class="card-img-top" alt="">
+                    <img src="{{url_for ('static',filename='assets/img/car_climbing.jpg')}}" class="card-img-top" alt="">
                     <div class="card-body">
                     <h3 class="card-title">Gouge</h3>
                     <p class="card-text" style="font-style: italic ;">An exploration of vehicle price gouging within Texas </p>
