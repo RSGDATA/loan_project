@@ -120,6 +120,9 @@
   font-weight: bold;
 }
 
+#mastheadpic {
+  background-image: 'static/assets/img/timeticking.jpg'
+}
 
 
 .command_user {
@@ -11488,6 +11491,10 @@ hr.divider-light {
   #mainNav.navbar-shrink .navbar-nav .nav-item .nav-link:hover {
     color: #f4623a;
   }
+}
+
+#mastheadpic {
+  background-image: url("../assets/img/handing_money.jpg");
 }
 
 
