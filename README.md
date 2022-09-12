@@ -4,3 +4,7 @@ The purpose of this analysis was to determine whether previous applicants who ap
 
 A Machine Learning Model that focused on the features: Amount Requested, Loan Title, Debt-To-Income Ratio, State applicant resides in, and Employment Length, was utilized to determine whether an applicant would be initially approved or denied included. Furthermore, features were refined to: Recoveries, Total Late Fees Received, Total Principal Received, Total Late Payments Over the Last 2 years, FICO Score, Loan Status, and Payment Total to predict if a prospective loan applicant would pay their loan on-time or would be late with their payement.
 
+Below please click the link to see our website that showcases our machine learning models and visualizations.
+
+http://lending-club-simulator.herokuapp.com/
+
